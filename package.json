@@ -1,0 +1,199 @@
+{
+  "name": "editorjs-inline-tool",
+  "version": "0.0.1",
+  "description": "Create an inline tool for editorjs with text formatting tags easily.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natterstefan/editorjs-inline-tool.git"
+  },
+  "author": "Stefan Natter (https://twitter.com/natterstefan)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natterstefan/editorjs-inline-tool/issues"
+  },
+  "homepage": "https://github.com/natterstefan/editorjs-inline-tool#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "esm",
+    "lib"
+  ],
+  "keywords": [
+    "editor",
+    "editor.js",
+    "editorjs",
+    "@editorjs",
+    "editorjs-tool",
+    "editor-js-tool",
+    "editorjs-inlinetool",
+    "editor-js-inline-tool",
+    "wysiwyg"
+  ],
+  "scripts": {
+    "build": "npm run build-cjs && npm run build-es && npm run build-esm && npm run build-umd",
+    "build-cjs": "tsc --outDir lib --module commonjs --target es5",
+    "build-es": "tsc --outDir es --module es2015 --target es2015",
+    "build-esm": "tsc --outDir esm --module es2015 --target es5",
+    "build-umd": "webpack --mode=production",
+    "build-storybook": "build-storybook",
+    "contributors-add": "all-contributors add",
+    "contributors-generate": "all-contributors generate",
+    "lint": "tsc --noEmit && eslint '**/*.{ts,tsx}' --quiet",
+    "prebuild": "rimraf dist && rimraf es && rimraf esm && rimraf lib",
+    "prepublishOnly": "npm run build && npm run prerelease",
+    "prerelease": "npm run test",
+    "postbuild": "npm run size",
+    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
+    "size": "size-limit",
+    "storybook": "start-storybook -p 6006 --ci",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@editorjs/editorjs": ">=2.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@editorjs/checklist": "^1.1.0",
+    "@editorjs/code": "^2.4.1",
+    "@editorjs/delimiter": "^1.1.0",
+    "@editorjs/editorjs": "^2.15.1",
+    "@editorjs/embed": "^2.2.1",
+    "@editorjs/header": "^2.3.1",
+    "@editorjs/image": "^2.3.3",
+    "@editorjs/inline-code": "^1.3.0",
+    "@editorjs/link": "^2.1.3",
+    "@editorjs/list": "^1.4.0",
+    "@editorjs/marker": "^1.2.1",
+    "@editorjs/paragraph": "^2.6.0",
+    "@editorjs/quote": "^2.3.0",
+    "@editorjs/raw": "^2.1.1",
+    "@editorjs/simple-image": "^1.3.3",
+    "@editorjs/table": "^1.2.0",
+    "@editorjs/warning": "^1.1.1",
+    "@natterstefan/react-editor-js": "^0.2.3",
+    "@size-limit/preset-small-lib": "^2.2.1",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "all-contributors-cli": "^6.11.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-ns": "^1.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "source-map-loader": "^0.2.4",
+    "standard-version": "^7.0.1",
+    "start-server-and-test": "^1.10.6",
+    "storybook-readme": "^5.0.8",
+    "terser-webpack-plugin": "^2.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "prettier --write",
+      "git update-index --again"
+    ]
+  },
+  "size-limit": [
+    {
+      "limit": "6 KB",
+      "path": "dist/index.js",
+      "config": "./webpack.config.js"
+    },
+    {
+      "limit": "6 KB",
+      "path": "lib/**/*.js"
+    },
+    {
+      "limit": "6 KB",
+      "path": "es/**/*.js"
+    },
+    {
+      "limit": "6 KB",
+      "path": "esm/**/*.js"
+    }
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "changelogHeader": "# editorjs-inline-tool\n\nAll notable changes to this project will be documented here. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).\n\n",
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Fixes"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "hidden": true
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "hidden": true
+      },
+      {
+        "type": "perf",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "hidden": true
+      }
+    ]
+  }
+}

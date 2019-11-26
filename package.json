@@ -46,7 +46,7 @@
     "contributors-generate": "all-contributors generate",
     "lint": "tsc --noEmit && eslint '**/*.{ts,tsx}' --quiet",
     "prebuild": "rimraf dist && rimraf es && rimraf esm && rimraf lib",
-    "prepublishOnly": "npm run build && npm run prerelease",
+    "prepublishOnly": "npm run build",
     "postbuild": "npm run size",
     "release": "HUSKY_SKIP_HOOKS=1 standard-version",
     "size": "size-limit",

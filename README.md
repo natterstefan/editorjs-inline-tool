@@ -1,5 +1,6 @@
 # editorjs-inline-tool
 
+[![npm version](https://badge.fury.io/js/editorjs-inline-tools.svg)](https://badge.fury.io/js/editorjs-inline-tools)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 Create an inline tool for ([https://editorjs.io/][1]) with [text formatting tags](https://www.w3schools.com/html/html_formatting.asp)

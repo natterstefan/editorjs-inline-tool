@@ -20,12 +20,19 @@ import SimpleImage from '@editorjs/simple-image'
 import Table from '@editorjs/table'
 import Warning from '@editorjs/warning'
 
-import createGenericInlineTool from '..'
+import createGenericInlineTool, { ItalicInlineTool } from '..'
 
 export const TOOLS = {
   embed: Embed,
-  table: Table,
-  list: List,
+  table: {
+    class: Table,
+    // in some cases it is also required to explicitly define `inlineToolbar` _again_
+    inlineToolbar: ['bold', 'italic', 'link'],
+  },
+  list: {
+    class: List,
+    inlineToolbar: ['bold', 'italic', 'link'],
+  },
   warning: Warning,
   code: Code,
   linkTool: LinkTool,
@@ -39,6 +46,7 @@ export const TOOLS = {
   simpleImage: SimpleImage,
   // overwrite default tools of editorjs by using the same name
   bold: {
+    // use createGenericInlineTool
     class: createGenericInlineTool({
       sanitize: {
         strong: {},
@@ -49,15 +57,6 @@ export const TOOLS = {
         '<svg class="icon icon--bold" width="12px" height="14px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bold"></use></svg>',
     }),
   },
-  italic: {
-    class: createGenericInlineTool({
-      sanitize: {
-        em: {},
-      },
-      shortcut: 'CMD+I',
-      tagName: 'EM',
-      toolboxIcon:
-        '<svg class="icon icon--italic" width="34px" height="34px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#italic"></use></svg>',
-    }),
-  },
+  // or use a pre-defined tool
+  italic: ItalicInlineTool,
 }

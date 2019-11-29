@@ -45,6 +45,8 @@ import EditorJs from '@natterstefan/react-editor-js'
 import Header from '@editorjs/header'
 import Paragraph from '@editorjs/paragraph'
 
+import createGenericInlineTool, { ItalicInlineTool } from 'editorjs-inline-tool'
+
 const TOOLS = {
   header: Header,
   paragraph: {
@@ -64,6 +66,8 @@ const TOOLS = {
         '<svg class="icon icon--bold" width="12px" height="14px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bold"></use></svg>',
     }),
   },
+  // or use a pre-defined tool instead
+  italic: ItalicInlineTool,
 }
 
 const App = () => {
@@ -82,6 +86,9 @@ options are available:
 | shortcut    | `false`  | `string` | `undefined` | [Shortcut](https://github.com/codex-team/codex.shortcuts) to apply [Tool's render and inserting behaviour](https://editorjs.io/tools-api#shortcut) |
 | tagName     |  `true`  | `string` | `undefined` | text [formatting tag](https://www.w3schools.com/html/html_formatting.asp) (eg. `bold`)                                                             |
 | toolboxIcon |  `true`  | `string` | `undefined` | Icon for the tools [inline toolbar](https://editorjs.io/inline-tools-api-1#render)                                                                 |
+
+Additionally, there are two pre-defined inline tools available: `ItalicInlineTool`
+and `StrongInlineTool` (they can be found [here](src/inline-tools.tsx)).
 
 ## Licence
 

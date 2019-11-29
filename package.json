@@ -48,7 +48,8 @@
     "prebuild": "rimraf dist && rimraf es && rimraf esm && rimraf lib",
     "prepublishOnly": "npm run build",
     "postbuild": "npm run size",
-    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
+    "release-minor": "HUSKY_SKIP_HOOKS=1 standard-version --release-as minor",
+    "release-patch": "HUSKY_SKIP_HOOKS=1 standard-version --release-as patch",
     "size": "size-limit",
     "storybook": "start-storybook -p 6006 --ci",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -45,7 +45,10 @@ import EditorJs from '@natterstefan/react-editor-js'
 import Header from '@editorjs/header'
 import Paragraph from '@editorjs/paragraph'
 
-import createGenericInlineTool, { ItalicInlineTool } from 'editorjs-inline-tool'
+import createGenericInlineTool, {
+  ItalicInlineTool,
+  UnderlineInlineTool,
+} from 'editorjs-inline-tool'
 
 const TOOLS = {
   header: Header,
@@ -68,6 +71,7 @@ const TOOLS = {
   },
   // or use a pre-defined tool instead
   italic: ItalicInlineTool,
+  underline: UnderlineInlineTool,
 }
 
 const App = () => {
@@ -87,8 +91,9 @@ options are available:
 | tagName     |  `true`  | `string` | `undefined` | text [formatting tag](https://www.w3schools.com/html/html_formatting.asp) (eg. `bold`)                                                             |
 | toolboxIcon |  `true`  | `string` | `undefined` | Icon for the tools [inline toolbar](https://editorjs.io/inline-tools-api-1#render)                                                                 |
 
-Additionally, there are two pre-defined inline tools available: `ItalicInlineTool`
-and `StrongInlineTool` (they can be found [here](src/inline-tools.tsx)).
+Additionally, there are pre-defined inline tools available: `ItalicInlineTool`,
+`StrongInlineTool` and `UnderlineInlineTool` (they can be found
+[here](src/inline-tools.tsx)).
 
 ## Licence
 

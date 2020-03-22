@@ -1,2 +1,6 @@
 export { default } from './tool'
-export { ItalicInlineTool, StrongInlineTool } from './inline-tools'
+export {
+  ItalicInlineTool,
+  StrongInlineTool,
+  UnderlineInlineTool,
+} from './inline-tools'

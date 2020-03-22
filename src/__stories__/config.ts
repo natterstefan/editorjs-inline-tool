@@ -20,6 +20,8 @@ import SimpleImage from '@editorjs/simple-image'
 import Table from '@editorjs/table'
 import Warning from '@editorjs/warning'
 
+import { UnderlineInlineTool } from '../inline-tools'
+
 import createGenericInlineTool, { ItalicInlineTool } from '..'
 
 export const TOOLS = {
@@ -59,4 +61,5 @@ export const TOOLS = {
   },
   // or use a pre-defined tool
   italic: ItalicInlineTool,
+  underline: UnderlineInlineTool,
 }

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented here. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.0](https://github.com/natterstefan/editorjs-inline-tool/compare/v0.2.0...v0.3.0) (2020-03-22)
+
+
+### Features
+
+* new required version for peerDependency @editorjs/editorjs ([dce2565](https://github.com/natterstefan/editorjs-inline-tool/commit/dce2565579b267355f3848a14ca0335f1fe0a01d))
+* underline inline tool added ([f3776b1](https://github.com/natterstefan/editorjs-inline-tool/commit/f3776b11377d5dc2e98163c8e546ba4774641a1b))
+
 ## [0.2.0](https://github.com/natterstefan/editorjs-inline-tool/compare/v0.1.1...v0.2.0) (2019-11-29)
 
 

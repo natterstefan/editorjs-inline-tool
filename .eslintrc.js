@@ -7,6 +7,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   rules: {
     'class-methods-use-this': 0,
+    'import/extensions': 0,
     'sort-keys': 0,
     '@typescript-eslint/interface-name-prefix': [
       2,

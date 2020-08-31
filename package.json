@@ -50,9 +50,8 @@
     "postbuild": "npm run size",
     "release-minor": "HUSKY_SKIP_HOOKS=1 standard-version --release-as minor",
     "release-patch": "HUSKY_SKIP_HOOKS=1 standard-version --release-as patch",
-    "start": "start-storybook",
+    "start": "start-storybook -p 6006 --ci",
     "size": "size-limit",
-    "storybook": "start-storybook -p 6006 --ci",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {

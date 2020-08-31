@@ -25,13 +25,13 @@ const createGenericInlineTool = ({
   toolboxIcon,
 }: Props) => {
   return class GenericInlineTool implements EditorJS.InlineTool {
-    private api: EditorJS.API = null
+    api: EditorJS.API = null
 
-    private button: HTMLButtonElement = null
+    button: HTMLButtonElement = null
 
-    private tag: string = null
+    tag: string = null
 
-    private iconClasses: {
+    iconClasses: {
       active: string
       base: string
     } = null

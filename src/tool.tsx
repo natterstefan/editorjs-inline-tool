@@ -2,9 +2,28 @@
 import * as EditorJS from '@editorjs/editorjs'
 
 type Props = {
+  /**
+   * Object that defines rules for automatic sanitizing.
+   * @see https://editorjs.io/tools-api#sanitize
+   * @default undefined
+   */
   sanitize?: {}
+  /**
+   * [Shortcut](https://github.com/codex-team/codex.shortcuts) to apply
+   * [Tool's render and inserting behaviour](https://editorjs.io/tools-api#shortcut)
+   * @default undefined
+   */
   shortcut?: string
+  /**
+   * text [formatting tag](https://www.w3schools.com/html/html_formatting.asp)
+   * (eg. `bold`)
+   * @default undefined
+   */
   tagName: string
+  /**
+   * Icon for the tools [inline toolbar](https://editorjs.io/inline-tools-api-1#render)
+   * @default undefined
+   */
   toolboxIcon: string
 }
 
@@ -12,11 +31,8 @@ type Props = {
  * GenericInlineTool returns an EditorJS.InlineTool capable of wrapping a
  * selected text with any given `tagName`.
  *
- * basic structure of the class below is inspired by
- * - https://github.com/editor-js/marker/blob/c306bcb33c88eaa3c172eaf387fbcd06ae6b297f/src/index.js
- *
- * @param {String} tagName - tag which should wrap the selected text
- * @return {EditorJS.InlineTool}
+ * inspired by
+ * @see https://github.com/editor-js/marker/blob/c306bcb33c88eaa3c172eaf387fbcd06ae6b297f/src/index.js
  */
 const createGenericInlineTool = ({
   sanitize,
@@ -25,13 +41,13 @@ const createGenericInlineTool = ({
   toolboxIcon,
 }: Props) => {
   return class GenericInlineTool implements EditorJS.InlineTool {
-    private api: EditorJS.API = null
+    api: EditorJS.API = null
 
-    private button: HTMLButtonElement = null
+    button: HTMLButtonElement = null
 
-    private tag: string = null
+    tag: string = null
 
-    private iconClasses: {
+    iconClasses: {
       active: string
       base: string
     } = null

@@ -16,6 +16,7 @@ esm
 lib
 *.tgz
 storybook-static
+*.d.ts.map
 
 # Optional npm cache directory
 .npm

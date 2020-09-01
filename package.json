@@ -1,6 +1,6 @@
 {
   "name": "editorjs-inline-tool",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Create an inline tool for editorjs with text formatting tags easily.",
   "repository": {
     "type": "git",

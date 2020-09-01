@@ -19,14 +19,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ts)x?$/,
         exclude: /node_modules/,
-        test: /\.(t|j)sx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
         options: {
-          useCache: true,
+          transpileOnly: true,
         },
       },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],
   },
   optimization: {
@@ -34,6 +33,7 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
+          cache: true,
           output: {
             comments: false,
           },
